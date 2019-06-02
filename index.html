@@ -66,39 +66,5 @@
 <p><iframe src="https://player.vimeo.com/video/322137372" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>-->
 </section>
 </article>
-
-<div class="container hidden" id="cookie-bar">
-        <span>This site uses cookies to deliver services and to analyze traffic</span>
-        <div class="buttons">
-            <a href="https://policies.google.com/technologies/cookies" rel="noopener" target="_blank">See details</a>
-            <button class="confirm">OK, Got it</button>
-        </div>
-    </div>
-
-    <script>
-        var cookieBarState = false;
-        try{
-            cookieBarState = window.localStorage.getItem('cookiebar_state');
-        } catch(e){
-            console.log("Failed to load cookie bar state");
-        }
-        if(!cookieBarState){
-            var cookieBarEl = document.querySelector('#cookie-bar');
-            if(cookieBarEl){
-                cookieBarEl.classList.remove('hidden');
-                var button = cookieBarEl.querySelector('.confirm');
-                function buttonClickHandler (event){
-                    try{
-                        window.localStorage.setItem('cookiebar_state', 'True');
-                    } catch (e){
-                        console.log("Failed to save cookiebar state");
-                    }
-                    var cookieBarEl = document.querySelector('#cookie-bar');
-                    cookieBarEl.classList.add('hidden');
-                }
-                button.addEventListener('click', buttonClickHandler);
-            }
-        }
-    </script>
 	</body>
 </html>
